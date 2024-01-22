@@ -53,6 +53,30 @@ Make sure to read the [Contributing](CONTRIBUTING.md) page first though.
 
 > Note: make sure to run `./gradlew spotlessApply` before uploading a PR.
 
+## Troubleshooting
+
+### Error running gradlew command on WSL
+
+```shell
+./gradlew spotlessApply
+
+/usr/bin/env: ‘sh\r’: No such file or directory
+```
+
+You most likely have problems with the line ending character. You can fix it with a few steps:
+
+Install _dos2unix_:
+
+```shell
+sudo apt install dos2unix 
+```
+
+Fix the gradlew file:
+
+```shell
+dos2unix gradlew
+```
+
 ## License
 
 ```
